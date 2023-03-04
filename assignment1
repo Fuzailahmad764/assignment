@@ -1,0 +1,360 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "53f66534-8b39-451e-87e8-b4a0b7dea7e5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n",
+      "9\n",
+      "10\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter a number between 1 and 10:  34\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Invalid input, please try again.\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter a number between 1 and 10:  6\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Explain with an example each when to use a for loop and a while loop.\n",
+    "# For Loop:\n",
+    "# A for loop is used when you want to execute a block of code for a specific number of times, and you know the exact number of times the loop should run. The for loop iterates over a sequence of values and performs a specific action on each iteration until the sequence is complete.\n",
+    "\n",
+    "# For example, suppose you want to print the numbers from 1 to 10. You can use a for loop like this:\n",
+    "for i in range(1, 11):\n",
+    "    print(i)\n",
+    "       \n",
+    "#This loop will execute 10 times and print the numbers from 1 to 10.  \n",
+    "\n",
+    "# While Loop:\n",
+    "# A while loop is used when you want to execute a block of code repeatedly as long as a certain condition is true. The loop will continue to execute until the condition becomes false.\n",
+    "\n",
+    "# For example, suppose you want to keep asking a user for input until they enter a valid value. You can use a while loop like this:\n",
+    "\n",
+    "valid_input = False\n",
+    "while not valid_input:\n",
+    "    user_input = input(\"Enter a number between 1 and 10: \")\n",
+    "    if user_input.isdigit() and 1 <= int(user_input) <= 10:\n",
+    "        valid_input = True\n",
+    "    else:\n",
+    "        print(\"Invalid input, please try again.\")\n",
+    "#This loop will keep asking the user for input until they enter a valid number between 1 and 10. Once the user enters a valid value, the loop will exit.\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "eca6cad7-3d95-48a2-b0fb-b89344607660",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    " #2--Write a python program to print the sum and product of the first 10 natural numbers using for\n",
+    "# and while loop."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "9dbbba6e-7388-494e-99b9-4ec3967b1640",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Sum of first 10 natural numbers: 55\n",
+      "Product of first 10 natural numbers: 3628800\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Using For loop:\n",
+    "# Sum of first 10 natural numbers using for loop\n",
+    "sum = 0\n",
+    "for i in range(1, 11):\n",
+    "    sum += i\n",
+    "print(\"Sum of first 10 natural numbers:\", sum)\n",
+    "\n",
+    "# Product of first 10 natural numbers using for loop\n",
+    "product = 1\n",
+    "for i in range(1, 11):\n",
+    "    product *= i\n",
+    "print(\"Product of first 10 natural numbers:\", product)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "adeaace1-c381-46bb-b9b6-9b4cb398679c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Sum of first 10 natural numbers: 55\n",
+      "Product of first 10 natural numbers: 3628800\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Using While loop:\n",
+    "# Sum of first 10 natural numbers using while loop\n",
+    "sum = 0\n",
+    "i = 1\n",
+    "while i <= 10:\n",
+    "    sum += i\n",
+    "    i += 1\n",
+    "print(\"Sum of first 10 natural numbers:\", sum)\n",
+    "\n",
+    "# Product of first 10 natural numbers using while loop\n",
+    "product = 1\n",
+    "i = 1\n",
+    "while i <= 10:\n",
+    "    product *= i\n",
+    "    i += 1\n",
+    "print(\"Product of first 10 natural numbers:\", product)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "7c32ce02-c811-40fe-86d3-6f4258d1973a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter the number of units consumed:  310\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Electricity bill for the household: 2250.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "#3-Create a python program to compute the electricity bill for a household.\n",
+    "# Ask user for input\n",
+    "units_consumed = int(input(\"Enter the number of units consumed: \"))\n",
+    "\n",
+    "# Calculate bill amount\n",
+    "if units_consumed <= 100:\n",
+    "    total_bill_amount = units_consumed * 4.5\n",
+    "elif units_consumed <= 200:\n",
+    "    total_bill_amount = 100 * 4.5 + (units_consumed - 100) * 6\n",
+    "elif units_consumed <= 300:\n",
+    "    total_bill_amount = 100 * 4.5 + 100 * 6 + (units_consumed - 200) * 10\n",
+    "else:\n",
+    "    total_bill_amount = 100 * 4.5 + 100 * 6 + 100 * 10 + (units_consumed - 300) * 20\n",
+    "\n",
+    "# Display the final bill amount\n",
+    "print(\"Electricity bill for the household:\", total_bill_amount)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "7a34e37b-0a3f-48f1-bccb-a0244b955e2f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 4-Create a list of numbers from 1 to 100. Use for loop and while loop to calculate the cube of each\n",
+    "# number and if the cube of that number is divisible by 4 or 5 then append that number in a list and print\n",
+    "# that list."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "02f21175-0d0d-4d83-8964-38c8b078c742",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Numbers whose cube is divisible by 4 or 5: [2, 4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 52, 54, 55, 56, 58, 60, 62, 64, 65, 66, 68, 70, 72, 74, 75, 76, 78, 80, 82, 84, 85, 86, 88, 90, 92, 94, 95, 96, 98, 100]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#by for loop\n",
+    "# Create a list of numbers from 1 to 100\n",
+    "num_list = list(range(1, 101))\n",
+    "\n",
+    "# Create an empty list to store the numbers whose cube is divisible by 4 or 5\n",
+    "result_list = []\n",
+    "\n",
+    "# Loop through the list of numbers and calculate the cube of each number\n",
+    "for num in num_list:\n",
+    "    cube = num ** 3\n",
+    "    \n",
+    "    # Check if the cube is divisible by 4 or 5 and append the number to the result list if true\n",
+    "    if cube % 4 == 0 or cube % 5 == 0:\n",
+    "        result_list.append(num)\n",
+    "\n",
+    "# Display the result list\n",
+    "print(\"Numbers whose cube is divisible by 4 or 5:\", result_list)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "8ee5bdb0-2328-4143-89d6-833b7697f6f6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Numbers whose cube is divisible by 4 or 5: [2, 4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30, 32, 34, 35, 36, 38, 40, 42, 44, 45, 46, 48, 50, 52, 54, 55, 56, 58, 60, 62, 64, 65, 66, 68, 70, 72, 74, 75, 76, 78, 80, 82, 84, 85, 86, 88, 90, 92, 94, 95, 96, 98, 100]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#by while loop\n",
+    "# Create a list of numbers from 1 to 100\n",
+    "num_list = list(range(1, 101))\n",
+    "\n",
+    "# Create an empty list to store the numbers whose cube is divisible by 4 or 5\n",
+    "result_list = []\n",
+    "\n",
+    "# Loop through the list of numbers using a while loop\n",
+    "i = 0\n",
+    "while i < len(num_list):\n",
+    "    num = num_list[i]\n",
+    "    cube = num ** 3\n",
+    "    \n",
+    "    # Check if the cube is divisible by 4 or 5 and append the number to the result list if true\n",
+    "    if cube % 4 == 0 or cube % 5 == 0:\n",
+    "        result_list.append(num)\n",
+    "    \n",
+    "    # Increment the loop counter\n",
+    "    i += 1\n",
+    "\n",
+    "# Display the result list\n",
+    "print(\"Numbers whose cube is divisible by 4 or 5:\", result_list)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "67d97540-5789-450e-82e0-0a53dae5289f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#5--Write a program to filter count vowels in the below-given string.\n",
+    "#string = \"I want to become a data scientist\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "c15a129f-608e-48b2-9714-77d49e9bb4ec",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Number of vowels in the string: 12\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Define the string\n",
+    "string = \"I want to become a data scientist\"\n",
+    "\n",
+    "# Define a list of vowels\n",
+    "vowels = ['a', 'e', 'i', 'o', 'u']\n",
+    "\n",
+    "# Initialize a variable to store the count of vowels\n",
+    "count = 0\n",
+    "\n",
+    "# Loop through the characters in the string\n",
+    "for char in string:\n",
+    "    # Check if the character is a vowel and increment the count if it is\n",
+    "    if char.lower() in vowels:\n",
+    "        count += 1\n",
+    "\n",
+    "# Display the count of vowels\n",
+    "print(\"Number of vowels in the string:\", count)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5b88ddba-a7fc-4758-867d-877f568ca290",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e00ff600-fd52-4216-be0d-2ad98f99595f",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  },
+  "toc-showtags": false
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
